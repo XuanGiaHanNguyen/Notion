@@ -34,7 +34,7 @@ function Home() {
       </div>
 
       {/* Part 2: Skills */}
-      <div>
+      <div className="mt-6">
         <h2 className="font-bold text-4xl pb-3">Skills</h2>
         <SkillsSection/>
       </div>
