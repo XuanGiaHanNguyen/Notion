@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import { Plus, Layers, Database, Languages, SlidersHorizontal, ArrowUpDown, Zap, Search, Maximize2, Code2, FileCode, Palette, Wrench, Cloud, Braces, Terminal, Box, GitBranch, Server, Cpu, Lock, Bolt } from 'lucide-react';
 
-export default function SkillsSection() {
+export default function ExperienceSection() {
   const [activeTab, setActiveTab] = useState('languages');
   const [skills, setSkills] = useState({
-    languages: ['Python', 'Go', 'JavaScript', 'TypeScript', 'C', 'Swift', 'HTML/CSS', 'Java'],
+    languages: ['Python', 'Go'],
     frameworks: ['React', 'Next.js', 'Node.js', 'Express.js', 'Django', 'FastAPI', 'Spring Boot', 'TensorFlow', 'Tailwind CSS'],
-    cloudtools: ['AWS', 'Docker', 'Git/GitHub', 'GitHub Actions', 'Redis', 'Stripe', 'OAuth/JWT', 'REST APIs'],
-    databases: ['PostgreSQL', 'MongoDB', 'Supabase']
   });
 
   // Icon mapping for skills
@@ -32,19 +30,7 @@ export default function SkillsSection() {
       'Spring Boot': Server,
       'TensorFlow': Cpu,
       'Tailwind CSS': Palette,
-      // Cloud/Tools
-      'AWS': Cloud,
-      'Docker': Box,
-      'Git/GitHub': GitBranch,
-      'GitHub Actions': GitBranch,
-      'Redis': Database,
-      'Stripe': Code2,
-      'OAuth/JWT': Lock,
-      'REST APIs': Server,
-      // Databases
-      'PostgreSQL': Database,
-      'MongoDB': Database,
-      'Supabase': Database,
+    
     };
     return iconMap[skill] || Wrench;
   };
@@ -52,8 +38,6 @@ export default function SkillsSection() {
   const tabs = [
     { id: 'languages', label: 'Languages', icon: Languages },
     { id: 'frameworks', label: 'Frameworks', icon: Layers },
-    { id: 'cloudtools', label: 'Cloud/Tools', icon: Cloud },
-    { id: 'databases', label: 'Databases', icon: Database },
   ];
 
   return (
@@ -110,7 +94,7 @@ export default function SkillsSection() {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-3 gap-4 mb-6">
+        <div className="grid grid-cols-2 gap-4 mb-6">
           {skills[activeTab].map((skill, index) => {
             const SkillIcon = getSkillIcon(skill);
             return (

@@ -2,6 +2,7 @@ import Hero from "../assets/Hero.png";
 import { BookUser, Settings } from "lucide-react";
 
 import SkillsSection from "./skills/Skill";
+import ExperienceSection from "./experience/experience";
 
 function Home() {
   return (
@@ -35,15 +36,14 @@ function Home() {
 
       {/* Part 2: Skills */}
       <div className="mt-6">
-        <h2 className="font-bold text-4xl pb-3">Skills</h2>
+        <h2 className="font-bold text-3xl pb-3">Skills</h2>
         <SkillsSection/>
       </div>
 
       {/* Part 3: Experience */}
-      <div>
-        <h2>Experiences</h2>
-        <div></div>
-        <div></div>
+      <div className="mt-16">
+        <h2 className="font-bold text-3xl pb-3">Experiences</h2>
+        <ExperienceSection/>
       </div>
 
       {/* Part 3: Projects */}
