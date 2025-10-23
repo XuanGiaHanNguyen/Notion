@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 
 import Moffitt from "../../assets/Moffitt.png";
-import Swinburne from "../../assets/Swinburne.png";
 import ERA from "../../assets/ERA.png"
 
 import RTC from "../../assets/RTC.png"
@@ -35,13 +34,6 @@ export default function ExperienceSection() {
         type: "University of South Florida",
         department: "Make paperworks easier",
         logo: ERA,
-      },
-      {
-        title: "Research Software Developer",
-        company: "Swinburne University of Technology",
-        duration: "Jan 2025 - Jun 2025 · 6 mos",
-        department: "LLM and its Implementation",
-        logo: Swinburne,
       },
     ],
     Volunteering: [

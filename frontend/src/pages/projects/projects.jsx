@@ -1,23 +1,16 @@
 import { useState } from "react";
 import {
-  ContactRound,
-  Briefcase,
   SlidersHorizontal,
   ArrowUpDown,
   Zap,
   Search,
   Maximize2,
-  ExternalLink,
   TvMinimal,
-  CalendarClock
+  CalendarClock,
+  Github,
+  Youtube,
+  Image as ImageIcon,
 } from "lucide-react";
-
-import Moffitt from "../../assets/Moffitt.png";
-import Swinburne from "../../assets/Swinburne.png";
-import ERA from "../../assets/ERA.png";
-import RTC from "../../assets/RTC.png";
-import USF from "../../assets/USF.png";
-import HealthHack from "../../assets/HeathHack.png";
 
 export default function ProjectSection() {
   const [activeTab, setActiveTab] = useState("Main");
@@ -34,111 +27,72 @@ export default function ProjectSection() {
           "JavaScript",
           "HTML",
           "CSS",
-          "Data Structures",
         ],
         media: [
-          { img: "/toasthome.png", title: "ToastTutor Demo", link: "#" },
-          { img: "/schedule.png", title: "Schedule Page" },
-          { img: "/checkout.png", title: "Checkout Page" },
+          {
+            img: "/toasthome.png",
+            title: "Video Demo",
+            link: "https://youtu.be/0wnn2L0FkWc?si=MQRzDgukTvG2lE52",
+          },
+          {
+            img: "/toasthome.png",
+            title: "Github",
+            link: "https://github.com/ttrang87/toast-tutor",
+          },
+          { img: "/checkout.png", title: "Pages" },
         ],
-        contributors: [RTC, USF, Swinburne],
+        contributors: ["T", "G", "Q","P"],
       },
       {
-        title: "ToastTutor",
-        duration: "Dec 2024 – Present",
+        title: "MediCare+",
+        duration: "Jun 2025 – Aug 2025",
         skills: [
           "React.js",
-          "Django",
+          "MongoDB",
           "Tailwind CSS",
           "JavaScript",
-          "HTML",
-          "CSS",
-          "Data Structures",
+          "Node.js",
         ],
         media: [
-          { img: "/toasthome.png", title: "ToastTutor Demo", link: "#" },
-          { img: "/schedule.png", title: "Schedule Page" },
-          { img: "/checkout.png", title: "Checkout Page" },
+          {
+            img: "/toasthome.png",
+            title: "Github",
+            link: "https://github.com/XuanGiaHanNguyen/MediCare-",
+          },
+          { img: "/checkout.png", title: "Pages" },
         ],
-        contributors: [RTC, USF, Swinburne],
+        contributors: ["Y","P"],
       },
       {
-        title: "ToastTutor",
-        duration: "Dec 2024 – Present",
-        skills: [
-          "React.js",
-          "Django",
-          "Tailwind CSS",
-          "JavaScript",
-          "HTML",
-          "CSS",
-          "Data Structures",
-        ],
+        title: "Cellular Automaton Simulator",
+        duration: "Sept 2025 – Oct 2025",
+        skills: ["React.js", "Java", "TypeScript", "Docker", "AWS"],
         media: [
-          { img: "/toasthome.png", title: "ToastTutor Demo", link: "#" },
-          { img: "/schedule.png", title: "Schedule Page" },
-          { img: "/checkout.png", title: "Checkout Page" },
+          {
+            img: "/toasthome.png",
+            title: "Video Demo",
+            link: "https://youtu.be/SDTYmDCTQvs?si=MzNTIQgJZVC0J_6x",
+          },
+          {
+            img: "/toasthome.png",
+            title: "Github",
+            link: "https://github.com/XuanGiaHanNguyen/Cellular-Automaton-Visualization-Tool",
+          },
         ],
-        contributors: [RTC, USF, Swinburne],
       },
     ],
     "In Progress": [
-     {
-        title: "ToastTutor",
-        duration: "Dec 2024 – Present",
-        skills: [
-          "React.js",
-          "Django",
-          "Tailwind CSS",
-          "JavaScript",
-          "HTML",
-          "CSS",
-          "Data Structures",
-        ],
-        media: [
-          { img: "/toasthome.png", title: "ToastTutor Demo", link: "#" },
-          { img: "/schedule.png", title: "Schedule Page" },
-          { img: "/checkout.png", title: "Checkout Page" },
-        ],
-        contributors: [RTC, USF, Swinburne],
-      },
       {
-        title: "ToastTutor",
+        title: "Blockchain-based Cryptocurrency",
         duration: "Dec 2024 – Present",
-        skills: [
-          "React.js",
-          "Django",
-          "Tailwind CSS",
-          "JavaScript",
-          "HTML",
-          "CSS",
-          "Data Structures",
-        ],
+        skills: ["Go"],
         media: [
-          { img: "/toasthome.png", title: "ToastTutor Demo", link: "#" },
-          { img: "/schedule.png", title: "Schedule Page" },
-          { img: "/checkout.png", title: "Checkout Page" },
+          {
+            img: "/toasthome.png",
+            title: "Github",
+            link: "https://github.com/XuanGiaHanNguyen/Simplified-BlockChain",
+          },
         ],
-        contributors: [RTC, USF, Swinburne],
-      },
-      {
-        title: "ToastTutor",
-        duration: "Dec 2024 – Present",
-        skills: [
-          "React.js",
-          "Django",
-          "Tailwind CSS",
-          "JavaScript",
-          "HTML",
-          "CSS",
-          "Data Structures",
-        ],
-        media: [
-          { img: "/toasthome.png", title: "ToastTutor Demo", link: "#" },
-          { img: "/schedule.png", title: "Schedule Page" },
-          { img: "/checkout.png", title: "Checkout Page" },
-        ],
-        contributors: [RTC, USF, Swinburne],
       },
     ],
   };
@@ -150,9 +104,10 @@ export default function ProjectSection() {
 
   return (
     <div className="w-full">
-      {/* === Top Menu Bar (kept same as original) === */}
+      {/* === Top Menu Bar === */}
       <div className="mb-2">
         <div className="flex items-center justify-between mb-6">
+          {/* Tabs */}
           <div className="flex items-center gap-3">
             {tabs.map((tab) => {
               const Icon = tab.icon;
@@ -173,6 +128,7 @@ export default function ProjectSection() {
             })}
           </div>
 
+          {/* Right Menu Buttons */}
           <div className="flex items-center gap-2">
             <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
               <SlidersHorizontal size={16} className="text-neutral-500" />
@@ -211,70 +167,90 @@ export default function ProjectSection() {
       </div>
 
       {/* === Project Cards Section === */}
-      <div className="grid grid-cols-1 gap-4 mb-6">
+      <div className="grid grid-cols-2 gap-4 mb-6">
         {experiences[activeTab].map((item, index) => (
           <div
             key={index}
             className="border border-gray-200 rounded-lg p-5 bg-white hover:shadow-sm hover:border-gray-300 transition-all cursor-pointer"
           >
-         
-              <div>
-                <h2 className="text-base font-semibold text-neutral-800 mb-1">
-                  {item.title}
-                </h2>
-                <p className="text-sm text-neutral-600 mb-2">
-                  {item.duration}
-                </p>
-                <p className="text-sm text-neutral-700 font-medium mb-1">
-                  Skills:
-                </p>
-                <p className="text-xs text-neutral-600 mb-4">
-                  {item.skills.join(" · ")}
-                </p>
+            <h2 className="text-base font-semibold text-neutral-800 mb-1">
+              {item.title}
+            </h2>
+            <p className="text-sm text-neutral-600 mb-2">{item.duration}</p>
 
-                <div className="grid grid-cols-3 gap-3 mb-3">
-                  {item.media.map((m, i) => (
+            {item.skills && item.skills.length > 0 && (
+              <p className="text-sm text-neutral-700 font-medium mb-4">
+                Skills:
+                <span className="text-xs text-neutral-600 ml-1">
+                  {item.skills.join(" · ")}
+                </span>
+              </p>
+            )}
+
+            {/* Media Section */}
+            {item.media && item.media.length > 0 && (
+              <div className="grid grid-cols-4 gap-3 mb-3">
+                {item.media.map((m, i) => {
+                  const isYouTube =
+                    m.link && (m.link.includes("youtube") || m.link.includes("youtu.be"));
+                  const isGitHub = m.link && m.link.includes("github");
+
+                  return (
                     <div key={i}>
-                      <div className="relative w-full aspect-video rounded-md overflow-hidden border border-gray-200">
-                        <img
-                          src={m.img}
-                          alt={m.title}
-                          className="object-cover w-full h-full"
-                        />
-                        {m.link && (
-                          <a
-                            href={m.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="absolute top-2 right-2 bg-white/90 p-1 rounded-full hover:bg-white"
-                          >
-                            <ExternalLink size={14} className="text-gray-600" />
-                          </a>
-                        )}
-                      </div>
-                      <p className="text-xs font-medium text-neutral-800 mt-1">
-                        {m.title}
-                      </p>
+                      {m.link ? (
+                        <a
+                          href={m.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block"
+                        >
+                          <div className="relative w-full aspect-video rounded-md overflow-hidden border bg-neutral-100 border-gray-200 flex items-center justify-center">
+                            {isYouTube ? (
+                              <Youtube size={40} className="text-neutral-300" />
+                            ) : isGitHub ? (
+                              <Github size={40} className="text-neutral-300" />
+                            ) : (
+                              <ExternalLink size={40} className="text-neutral-400" />
+                            )}
+                          </div>
+                          <p className="text-xs font-medium text-neutral-600 mt-1 text-center">
+                            {m.title}
+                          </p>
+                        </a>
+                      ) : (
+                        <div>
+                          <div className="relative w-full aspect-video rounded-md overflow-hidden border bg-neutral-100 border-gray-200 flex items-center justify-center">
+                            <ImageIcon size={40} className="text-neutral-300" />
+                          </div>
+                          <p className="text-xs font-medium text-neutral-600 mt-1 text-center">
+                            {m.title}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+
+            {/* Contributors Section */}
+            {item.contributors && item.contributors.length > 0 && (
+              <div className="flex items-center mt-6">
+                <p className="text-xs font-medium text-neutral-700 mr-2">
+                  Other contributors
+                </p>
+                <div className="flex -space-x-2">
+                  {item.contributors.map((letter, idx) => (
+                    <div
+                      key={idx}
+                      className="w-7 h-7 rounded-full border-2 border-white bg-neutral-600 text-white flex items-center justify-center text-xs font-semibold"
+                    >
+                      {letter}
                     </div>
                   ))}
                 </div>
-
-                <div className="flex items-center mt-3">
-                  <p className="text-xs font-medium text-neutral-700 mr-2">
-                    Other contributors
-                  </p>
-                  <div className="flex -space-x-2">
-                    {item.contributors.map((logo, idx) => (
-                      <img
-                        key={idx}
-                        src={logo}
-                        alt="Contributor"
-                        className="w-7 h-7 rounded-full border border-white object-cover"
-                      />
-                    ))}
-                  </div>
-                </div>
               </div>
+            )}
           </div>
         ))}
       </div>
