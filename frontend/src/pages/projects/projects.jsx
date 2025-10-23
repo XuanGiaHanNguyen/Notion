@@ -17,7 +17,7 @@ import RTC from "../../assets/RTC.png"
 import USF from "../../assets/USF.png"
 import HealthHack from "../../assets/HeathHack.png"
 
-export default function ExperienceSection() {
+export default function ProjectSection() {
   const [activeTab, setActiveTab] = useState("Experience");
   const [experiences, setExperiences] = useState({
     Experience: [

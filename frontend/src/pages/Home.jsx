@@ -3,6 +3,7 @@ import { BookUser, Settings } from "lucide-react";
 
 import SkillsSection from "./skills/Skill";
 import ExperienceSection from "./experience/experience";
+import ProjectSection from "./projects/projects";
 
 function Home() {
   return (
@@ -35,27 +36,26 @@ function Home() {
       </div>
 
       {/* Part 2: Skills */}
-      <div className="mt-6">
+      <div className="mt-2">
         <h2 className="font-bold text-3xl pb-3">Skills</h2>
-        <SkillsSection/>
+        <SkillsSection />
       </div>
 
       {/* Part 3: Experience */}
       <div className="mt-16">
         <h2 className="font-bold text-3xl pb-3">Experiences</h2>
-        <ExperienceSection/>
+        <ExperienceSection />
       </div>
 
       {/* Part 3: Projects */}
-      <div>
-        <h2>Skills</h2>
-        <div></div>
-        <div></div>
+      <div className="mt-16">
+        <h2 className="font-bold text-3xl pb-3">Projects</h2>
+        <ProjectSection />
       </div>
 
       {/* Part 4: Contact Me */}
       <div>
-        <h2>Skills</h2>
+        <h2>Contact Me</h2>
         <div></div>
         <div></div>
       </div>
