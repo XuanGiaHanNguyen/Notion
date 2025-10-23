@@ -35,14 +35,10 @@ function Home() {
         </div>
       </div>
 
-      {/* Part 2: Skills */}
-      <div className="mt-2">
-        <h2 className="font-bold text-3xl pb-3">Skills</h2>
-        <SkillsSection />
-      </div>
+      
 
       {/* Part 3: Experience */}
-      <div className="mt-16">
+      <div className="mt-4">
         <h2 className="font-bold text-3xl pb-3">Experiences</h2>
         <ExperienceSection />
       </div>
@@ -51,6 +47,12 @@ function Home() {
       <div className="mt-16">
         <h2 className="font-bold text-3xl pb-3">Projects</h2>
         <ProjectSection />
+      </div>
+
+      {/* Part 2: Skills */}
+      <div className="mt-16">
+        <h2 className="font-bold text-3xl pb-3">Skills</h2>
+        <SkillsSection />
       </div>
 
       {/* Part 4: Contact Me */}

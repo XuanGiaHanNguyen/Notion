@@ -31,7 +31,7 @@ export default function ExperienceSection() {
       {
         title: "Frontend Developer",
         company: "ERA Lab",
-        duration: "Oct 2025 - Present · 6 mos",
+        duration: "Oct 2025 - Present · 1 mos",
         type: "University of South Florida",
         department: "Make paperworks easier",
         logo: ERA,
@@ -115,7 +115,7 @@ export default function ExperienceSection() {
               <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
                 <Maximize2 size={16} className="text-neutral-500" />
               </button>
-              <button className="flex items-center gap-1 px-3 py-2 bg-sky-600 text-white rounded-lg text-sm font-medium hover:bg-sky-700 transition-colors ml-2">
+              <button className="flex items-center gap-1 px-3 py-2 bg-neutral-700 text-white rounded-lg text-sm font-medium hover:bg-neutral-600 transition-colors ml-2">
                 New
                 <svg
                   width="12"
@@ -137,7 +137,7 @@ export default function ExperienceSection() {
         </div>
 
         {/* Experience Grid */}
-        <div className="grid grid-cols-2 gap-4 mb-6">
+        <div className="grid grid-cols-1 gap-4 mb-6">
           {experiences[activeTab].map((exp, index) => {
             return (
               <div
