@@ -204,7 +204,7 @@ export default function ProjectSection() {
                           rel="noopener noreferrer"
                           className="block"
                         >
-                          <div className="relative w-full aspect-video rounded-md overflow-hidden border bg-neutral-100 border-gray-200 flex items-center justify-center">
+                          <div className="relative w-full aspect-video rounded-md overflow-hidden border bg-neutral-500 border-gray-200 flex items-center justify-center">
                             {isYouTube ? (
                               <Youtube size={40} className="text-neutral-300" />
                             ) : isGitHub ? (
@@ -219,7 +219,7 @@ export default function ProjectSection() {
                         </a>
                       ) : (
                         <div>
-                          <div className="relative w-full aspect-video rounded-md overflow-hidden border bg-neutral-100 border-gray-200 flex items-center justify-center">
+                          <div className="relative w-full aspect-video rounded-md overflow-hidden border bg-neutral-500 border-gray-200 flex items-center justify-center">
                             <ImageIcon size={40} className="text-neutral-300" />
                           </div>
                           <p className="text-xs font-medium text-neutral-600 mt-1 text-center">

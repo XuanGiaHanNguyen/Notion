@@ -1,4 +1,5 @@
 import Hero from "../assets/Hero.png";
+import Contact from "../assets/Contact.png";
 import { BookUser, Settings } from "lucide-react";
 
 import SkillsSection from "./skills/Skill";
@@ -35,8 +36,6 @@ function Home() {
         </div>
       </div>
 
-      
-
       {/* Part 3: Experience */}
       <div className="mt-4">
         <h2 className="font-bold text-3xl pb-3">Experiences</h2>
@@ -56,10 +55,60 @@ function Home() {
       </div>
 
       {/* Part 4: Contact Me */}
-      <div>
-        <h2>Contact Me</h2>
-        <div></div>
-        <div></div>
+      <div className="mt-20">
+        <section className="flex flex-col md:flex-row gap-16 mb-26">
+          {/* Left Content */}
+          <div className="flex-1 flex flex-col justify-start">
+            <h2 className="text-3xl font-bold mb-4">Let’s Work Together</h2>
+            <p className="text-gray-600 leading-relaxed">
+              Have an idea, a project, or just want to say hi? Drop a message
+              below — I’d love to connect and hear from you!
+            </p>
+          </div>
+
+          {/* Right Form */}
+          <form className="flex-1 space-y-6">
+            <div>
+              <label className="block text-sm font-semibold mb-1">
+                Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                placeholder="John Doe"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold mb-1">
+                Email <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                placeholder="heyeaslo@gmail.com"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold mb-1">
+                Send a message <span className="text-red-500">*</span>
+              </label>
+              <textarea
+                placeholder="Your Message"
+                rows={4}
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="bg-neutral-700 text-white px-6 py-2 rounded-lg font-semibold hover:bg-neutral-600 flex items-center gap-2 transition"
+            >
+              Submit <span>→</span>
+            </button>
+          </form>
+        </section>
       </div>
     </div>
   );

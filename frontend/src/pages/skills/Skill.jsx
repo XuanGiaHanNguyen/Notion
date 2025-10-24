@@ -166,7 +166,7 @@ export default function SkillsSection() {
             >
               <IconComponent
                 size={56}
-                className="grayscale opacity-100 group-hover:opacity-100 transition-all text-neutral-700"
+                className="grayscale opacity-100 group-hover:opacity-100 transition-all text-neutral-600"
               />
             </div>
           );
