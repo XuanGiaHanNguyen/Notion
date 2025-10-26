@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import {
   Layers,
   Database,
@@ -35,6 +36,7 @@ import {
   SiPostgresql,
   SiMongodb,
   SiSupabase,
+  SiCss3,
 } from "react-icons/si";
 
 export default function SkillsSection() {
@@ -48,7 +50,8 @@ export default function SkillsSection() {
       "TypeScript",
       "C",
       "Swift",
-      "HTML/CSS",
+      "HTML",
+      "CSS",
     ],
     frameworks: [
       "React",
@@ -73,7 +76,8 @@ export default function SkillsSection() {
     TypeScript: SiTypescript,
     C: SiC,
     Swift: SiSwift,
-    "HTML/CSS": SiHtml5,
+    HTML: SiHtml5,
+    CSS: SiCss3,
 
     // Frameworks
     React: SiReact,
@@ -105,10 +109,31 @@ export default function SkillsSection() {
     { id: "databases", label: "Databases", icon: Database },
   ];
 
+  const fadeUp = {
+    hidden: { opacity: 0, y: 15 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.05, duration: 0.4, ease: "easeOut" },
+    }),
+  };
+
   return (
-    <div className="max-w-6xl mx-auto">
+    <motion.div
+      className="max-w-6xl mx-auto"
+      initial={false}
+      animate="visible"
+      variants={{
+        visible: {
+          transition: { staggerChildren: 0.05, delayChildren: 0.1 },
+        },
+      }}
+    >
       {/* Header */}
-      <div className="mb-6 flex items-center justify-between">
+      <motion.div
+        className="mb-6 flex items-center justify-between"
+        variants={fadeUp}
+      >
         <div className="flex items-center gap-3">
           {tabs.map((tab) => {
             const Icon = tab.icon;
@@ -130,12 +155,18 @@ export default function SkillsSection() {
         </div>
 
         <div className="flex items-center gap-2">
-          <SlidersHorizontal size={16} className="text-neutral-500" />
-          <ArrowUpDown size={16} className="text-neutral-500" />
-          <Zap size={16} className="text-neutral-500" />
-          <Search size={16} className="text-neutral-500" />
-          <Maximize2 size={16} className="text-neutral-500" />
-          <button className="flex items-center gap-1 px-3 py-2 bg-neutral-700 text-white rounded-lg text-sm font-medium hover:bg-neutral-600 transition-colors ml-2">
+          {[SlidersHorizontal, ArrowUpDown, Zap, Search, Maximize2].map(
+            (Icon, i) => (
+              <motion.div key={i} variants={fadeUp} custom={i * 0.1}>
+                <Icon size={16} className="text-neutral-500" />
+              </motion.div>
+            )
+          )}
+          <motion.button
+            className="flex items-center gap-1 px-3 py-2 bg-neutral-700 text-white rounded-lg text-sm font-medium hover:bg-neutral-600 transition-colors ml-2"
+            variants={fadeUp}
+            custom={0.6}
+          >
             New
             <svg
               width="12"
@@ -151,27 +182,40 @@ export default function SkillsSection() {
                 strokeLinecap="round"
               />
             </svg>
-          </button>
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Skills Grid */}
-      <div className="grid grid-cols-5 gap-4 mb-6">
-        {skills[activeTab].map((skill) => {
+      <motion.div
+        key={activeTab}
+        className="grid grid-cols-5 gap-4 mb-6"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: {
+            transition: { staggerChildren: 0.07, delayChildren: 0 },
+          },
+        }}
+      >
+        {skills[activeTab].map((skill, index) => {
           const IconComponent = iconMap[skill] || Wrench;
           return (
-            <div
+            <motion.div
               key={skill}
               className="bg-white border border-gray-200 flex items-center justify-center rounded-lg p-6 shadow-sm hover:bg-neutral-50 transition-all cursor-pointer group"
+              variants={fadeUp}
+              custom={index * 0.1}
+              whileHover={{ scale: 1.05 }}
             >
               <IconComponent
                 size={56}
                 className="grayscale opacity-100 group-hover:opacity-100 transition-all text-neutral-600"
               />
-            </div>
+            </motion.div>
           );
         })}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

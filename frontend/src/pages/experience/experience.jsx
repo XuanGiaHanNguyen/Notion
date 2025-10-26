@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import {
   ContactRound,
   Briefcase,
@@ -10,15 +11,14 @@ import {
 } from "lucide-react";
 
 import Moffitt from "../../assets/Moffitt.png";
-import ERA from "../../assets/ERA.png"
-
-import RTC from "../../assets/RTC.png"
-import USF from "../../assets/USF.png"
-import HealthHack from "../../assets/HeathHack.png"
+import ERA from "../../assets/ERA.png";
+import RTC from "../../assets/RTC.png";
+import USF from "../../assets/USF.png";
+import HealthHack from "../../assets/HeathHack.png";
 
 export default function ExperienceSection() {
   const [activeTab, setActiveTab] = useState("Experience");
-  const [experiences, setExperiences] = useState({
+  const [experiences] = useState({
     Experience: [
       {
         title: "Student Software Engineer",
@@ -65,10 +65,36 @@ export default function ExperienceSection() {
     { id: "Volunteering", label: "Volunteering", icon: ContactRound },
   ];
 
+  const fadeUp = {
+    hidden: { opacity: 0, y: 15 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.15, duration: 0.5, ease: "easeOut" },
+    }),
+  };
+
+  const barVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
-    <div>
+    <motion.div
+      initial={false}
+      animate="visible"
+    >
       <div className="w-full">
-        <div className="mb-2">
+        <motion.div
+          className="mb-2"
+          initial="hidden"
+          animate="visible"
+          variants={barVariants}
+        >
           {/* Tabs and Actions */}
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
@@ -126,55 +152,65 @@ export default function ExperienceSection() {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Experience Grid */}
-        <div className="grid grid-cols-1 gap-4 mb-6">
-          {experiences[activeTab].map((exp, index) => {
-            return (
-              <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:bg-neutral-50 transition-all cursor-pointer group"
-              >
-                <div className="flex gap-3">
-                  {/* Logo Placeholder */}
-                  <div className="w-12 h-12 rounded flex items-center justify-center overflow-hidden">
-                    <img
-                      src={exp.logo}
-                      alt={exp.company}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+        <motion.div
+          key={activeTab}
+          className="grid grid-cols-1 gap-4 mb-6"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: {
+              transition: { staggerChildren: 0.15, delayChildren: 0 },
+            },
+          }}
+        >
+          {experiences[activeTab].map((exp, index) => (
+            <motion.div
+              key={index}
+              variants={fadeUp}
+              custom={index}
+              className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:bg-neutral-50 transition-all cursor-pointer group"
+            >
+              <div className="flex gap-3">
+                {/* Logo */}
+                <div className="w-12 h-12 rounded flex items-center justify-center overflow-hidden">
+                  <img
+                    src={exp.logo}
+                    alt={exp.company}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-                  {/* Content */}
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-semibold text-neutral-800 mb-0.5">
-                      {exp.title}
-                    </h3>
-                    <p className="text-sm text-neutral-600 mb-1">
-                      {exp.company}
-                      {exp.type && (
-                        <span className="text-neutral-500"> · {exp.type}</span>
-                      )}
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-base font-semibold text-neutral-800 mb-0.5">
+                    {exp.title}
+                  </h3>
+                  <p className="text-sm text-neutral-600 mb-1">
+                    {exp.company}
+                    {exp.type && (
+                      <span className="text-neutral-500"> · {exp.type}</span>
+                    )}
+                  </p>
+                  <p className="text-xs text-neutral-500">{exp.duration}</p>
+                  {exp.department && (
+                    <p className="text-xs text-neutral-600 mt-1">
+                      {exp.department}
                     </p>
-                    <p className="text-xs text-neutral-500">{exp.duration}</p>
-                    {exp.department && (
-                      <p className="text-xs text-neutral-600 mt-1">
-                        {exp.department}
-                      </p>
-                    )}
-                    {exp.category && (
-                      <p className="text-xs text-neutral-600 mt-1">
-                        {exp.category}
-                      </p>
-                    )}
-                  </div>
+                  )}
+                  {exp.category && (
+                    <p className="text-xs text-neutral-600 mt-1">
+                      {exp.category}
+                    </p>
+                  )}
                 </div>
               </div>
-            );
-          })}
-        </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
