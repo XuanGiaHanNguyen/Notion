@@ -1,6 +1,8 @@
 import Hero from "../assets/Hero.png";
-import { BookUser, Settings, Asterisk, CalendarFold } from "lucide-react";
+import { Asterisk, CalendarFold, Binoculars } from "lucide-react";
 import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import ContactModal from "./ContactModal";
 
 import SkillsSection from "./skills/Skill";
 import ExperienceSection from "./experience/experience";
@@ -20,6 +22,12 @@ function Home() {
     },
   };
 
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isModalOpen ? "hidden" : "auto";
+  }, [isModalOpen]);
+
   return (
     <div className="relative">
       {/* Stationary right-side navigation */}
@@ -38,22 +46,24 @@ function Home() {
           }}
         >
           <div className="flex-1">
-            <h2 className="font-bold text-5xl pb-3">Hello, My name is Han.</h2>
+            <h2 className="font-bold text-4xl pb-3">
+              Hello, My name is Han.
+            </h2>
             <p className="text-xl">
               Welcome to my lounge, where I stash together all my late-night
               coding projects and spontaneous bursts of creative chaos.
             </p>
             <p className="text-xl pt-1">
-              Feel free to look around and explore and shoot me an email if you'd
-              like to connect!
+              Feel free to look around and explore and shoot me an email if
+              you'd like to connect!
             </p>
             <div className="flex flex-row gap-3">
-              <button className="rounded-md text-md border border-neutral-300 py-2 px-3 hover:bg-neutral-100 mt-4 font-medium flex flex-row justify-center items-center gap-2 transition-all">
+              <button onClick={() => setModalOpen(true)} className="rounded-md text-md border border-neutral-300 py-2 px-3 hover:bg-neutral-100 mt-4 font-medium flex flex-row justify-center items-center gap-2 transition-all">
                 <CalendarFold width={20} className="text-neutral-700" />
-                Contact Me
+                Contact Info
               </button>
-              <button className="text-md py-2 px-3 mt-4 font-medium flex flex-row justify-center items-center gap-2 hover:text-neutral-700 transition-all">
-                <Settings width={18} className="text-neutral-600" />
+              <button className="text-md py-2 px-3 mt-4 font-medium rounded-md flex flex-row justify-center items-center gap-2 hover:text-neutral-700 hover:bg-neutral-50 transition-all">
+                <Binoculars width={18} className="text-neutral-600" />
               </button>
             </div>
           </div>
@@ -204,6 +214,8 @@ function Home() {
           </section>
         </motion.div>
       </div>
+      <ContactModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+
     </div>
   );
 }

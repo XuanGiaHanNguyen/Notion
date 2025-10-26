@@ -185,16 +185,16 @@ export default function ExperienceSection() {
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-base font-semibold text-neutral-800 mb-0.5">
+                  <h3 className="text-base font-semibold mb-0.5">
                     {exp.title}
                   </h3>
-                  <p className="text-sm text-neutral-600 mb-1">
+                  <p className="text-sm text-black-600 mb-1">
                     {exp.company}
                     {exp.type && (
-                      <span className="text-neutral-500"> · {exp.type}</span>
+                      <span className="text-black-500"> · {exp.type}</span>
                     )}
                   </p>
-                  <p className="text-xs text-neutral-500">{exp.duration}</p>
+                  <p className="text-xs text-black-500">{exp.duration}</p>
                   {exp.department && (
                     <p className="text-xs text-neutral-600 mt-1">
                       {exp.department}

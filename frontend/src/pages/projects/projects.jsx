@@ -223,15 +223,15 @@ export default function ProjectSection() {
             custom={index * 0.1}
             whileHover={{ scale: 1.01 }}
           >
-            <h2 className="text-base font-semibold text-neutral-800 mb-1">
+            <h2 className="text-base font-semibold text-black-800 mb-1">
               {item.title}
             </h2>
-            <p className="text-sm text-neutral-600 mb-2">{item.duration}</p>
+            <p className="text-sm text-black-600 mb-2">{item.duration}</p>
 
             {item.skills && (
-              <p className="text-sm text-neutral-700 font-medium mb-4">
+              <p className="text-sm text-neutral-800 font-medium mb-4">
                 Skills:
-                <span className="text-xs text-neutral-600 ml-1">
+                <span className="text-xs text-neutral-700 ml-1">
                   {item.skills.join(" · ")}
                 </span>
               </p>
@@ -272,7 +272,7 @@ export default function ProjectSection() {
                               />
                             )}
                           </div>
-                          <p className="text-xs font-medium text-neutral-600 mt-1 text-center">
+                          <p className="text-xs font-medium text-neutral-700 mt-1 text-center">
                             {m.title}
                           </p>
                         </a>
@@ -281,7 +281,7 @@ export default function ProjectSection() {
                           <div className="relative w-full aspect-video rounded-md overflow-hidden border bg-neutral-500 border-gray-200 flex items-center justify-center">
                             <ImageIcon size={40} className="text-neutral-300" />
                           </div>
-                          <p className="text-xs font-medium text-neutral-600 mt-1 text-center">
+                          <p className="text-xs font-medium text-neutral-700 mt-1 text-center">
                             {m.title}
                           </p>
                         </div>
@@ -295,7 +295,7 @@ export default function ProjectSection() {
             {/* Contributors Section */}
             {item.contributors && item.contributors.length > 0 && (
               <div className="flex items-center mt-6">
-                <p className="text-xs font-medium text-neutral-700 mr-2">
+                <p className="text-xs font-medium text-neutral-800 mr-2">
                   Other contributors
                 </p>
                 <div className="flex -space-x-2">
