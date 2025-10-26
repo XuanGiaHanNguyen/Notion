@@ -22,11 +22,10 @@ function Home() {
     },
   };
 
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // 🔹 Start closed, not open
 
-  useEffect(() => {
-    document.body.style.overflow = isModalOpen ? "hidden" : "auto";
-  }, [isModalOpen]);
+  const handleOpen = () => setIsOpen(true);
+  const handleClose = () => setIsOpen(false);
 
   return (
     <div className="relative">
@@ -46,9 +45,7 @@ function Home() {
           }}
         >
           <div className="flex-1">
-            <h2 className="font-bold text-4xl pb-3">
-              Hello, My name is Han.
-            </h2>
+            <h2 className="font-bold text-4xl pb-3">Hello, My name is Han.</h2>
             <p className="text-xl">
               Welcome to my lounge, where I stash together all my late-night
               coding projects and spontaneous bursts of creative chaos.
@@ -58,7 +55,10 @@ function Home() {
               you'd like to connect!
             </p>
             <div className="flex flex-row gap-3">
-              <button onClick={() => setModalOpen(true)} className="rounded-md text-md border border-neutral-300 py-2 px-3 hover:bg-neutral-100 mt-4 font-medium flex flex-row justify-center items-center gap-2 transition-all">
+              <button
+                onClick={handleOpen}
+                className="rounded-md text-md border border-neutral-300 py-2 px-3 hover:bg-neutral-100 mt-4 font-medium flex flex-row justify-center items-center gap-2 transition-all"
+              >
                 <CalendarFold width={20} className="text-neutral-700" />
                 Contact Info
               </button>
@@ -70,7 +70,7 @@ function Home() {
 
           {/* Static Hero image — no animation */}
           <div className="flex-1 flex justify-end items-center">
-            <img src={Hero} alt="Hero" className="w-120" />
+            <img src={Hero} alt="Hero" className="w-115" />
           </div>
         </motion.div>
 
@@ -214,8 +214,7 @@ function Home() {
           </section>
         </motion.div>
       </div>
-      <ContactModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
-
+      <ContactModal isOpen={isOpen} onClose={handleClose} />
     </div>
   );
 }
