@@ -45,7 +45,7 @@ function Home() {
           }}
         >
           <div className="flex-1">
-            <h2 className="font-bold text-4xl pb-3">Hello, My name is Han.</h2>
+            <h2 className="font-bold text-4xl pb-3">Hello, My name is Hollie.</h2>
             <p className="text-xl">
               Welcome to my lounge, where I stash together all my late-night
               coding projects and spontaneous bursts of creative chaos.

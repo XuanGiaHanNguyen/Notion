@@ -69,7 +69,6 @@ export default function SkillsSection() {
   };
 
   const iconMap = {
-    // Languages
     Python: SiPython,
     Go: SiGo,
     JavaScript: SiJavascript,
@@ -78,8 +77,6 @@ export default function SkillsSection() {
     Swift: SiSwift,
     HTML: SiHtml5,
     CSS: SiCss3,
-
-    // Frameworks
     React: SiReact,
     "Next.js": SiNextdotjs,
     "Node.js": SiNodedotjs,
@@ -89,14 +86,10 @@ export default function SkillsSection() {
     "Spring Boot": SiSpringboot,
     TensorFlow: SiTensorflow,
     "Tailwind CSS": SiTailwindcss,
-
-    // Cloud / Tools
     AWS: SiAmazon,
     Docker: SiDocker,
     "Git/GitHub": SiGithub,
     Redis: SiRedis,
-
-    // Databases
     PostgreSQL: SiPostgresql,
     MongoDB: SiMongodb,
     Supabase: SiSupabase,
@@ -110,19 +103,20 @@ export default function SkillsSection() {
   ];
 
   const fadeUp = {
-    hidden: { opacity: 0, y: 15 },
+    hidden: { opacity: 0, y: 30 },
     visible: (i = 1) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.05, duration: 0.4, ease: "easeOut" },
+      transition: { delay: i * 0.05, duration: 0.5, ease: "easeOut" },
     }),
   };
 
   return (
     <motion.div
       className="max-w-6xl mx-auto"
-      initial={false}
-      animate="visible"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
       variants={{
         visible: {
           transition: { staggerChildren: 0.05, delayChildren: 0.1 },
@@ -191,10 +185,11 @@ export default function SkillsSection() {
         key={activeTab}
         className="grid grid-cols-5 gap-4 mb-6"
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
         variants={{
           visible: {
-            transition: { staggerChildren: 0.07, delayChildren: 0 },
+            transition: { staggerChildren: 0.07 },
           },
         }}
       >

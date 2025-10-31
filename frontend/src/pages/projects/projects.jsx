@@ -16,7 +16,6 @@ import {
 
 export default function ProjectSection() {
   const [activeTab, setActiveTab] = useState("Main");
-
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
@@ -109,11 +108,11 @@ export default function ProjectSection() {
 
   // Subtle appear animation
   const fadeUp = {
-    hidden: { opacity: 0, y: 10 },
+    hidden: { opacity: 0, y: 15 },
     visible: (i = 1) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.1, duration: 0.4, ease: "easeOut" },
+      transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" },
     }),
   };
 
@@ -130,16 +129,16 @@ export default function ProjectSection() {
     <motion.div
       ref={sectionRef}
       className="w-full"
-      initial={false}
-      animate="visible"
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"} // 👈 triggers animation when in view
+      variants={{
+        visible: {
+          transition: { staggerChildren: 0.05, delayChildren: 0.1 },
+        },
+      }}
     >
       {/* === Top Menu Bar === */}
-      <motion.div
-        className="mb-2"
-        initial="hidden"
-        animate="visible"
-        variants={barVariants}
-      >
+      <motion.div className="mb-2" variants={barVariants}>
         <div className="flex items-center justify-between mb-6">
           {/* Tabs */}
           <div className="flex items-center gap-3">
@@ -207,8 +206,6 @@ export default function ProjectSection() {
       <motion.div
         key={activeTab}
         className="grid grid-cols-2 gap-4 mb-6"
-        initial="hidden"
-        animate="visible"
         variants={{
           visible: {
             transition: { staggerChildren: 0.08, delayChildren: 0 },
