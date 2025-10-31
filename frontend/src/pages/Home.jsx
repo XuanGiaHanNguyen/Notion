@@ -70,7 +70,7 @@ function Home() {
 
           {/* Static Hero image — no animation */}
           <div className="flex-1 flex justify-end items-center">
-            <img src={Hero} alt="Hero" className="w-115" />
+            <img src={Hero} alt="Hero" className="w-105" />
           </div>
         </motion.div>
 

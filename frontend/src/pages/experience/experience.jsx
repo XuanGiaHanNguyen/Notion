@@ -29,10 +29,9 @@ export default function ExperienceSection() {
       },
       {
         title: "Frontend Developer",
-        company: "ERA Lab",
+        company: "NeuroFlo AI",
         duration: "Oct 2025 - Present · 1 mos",
-        type: "University of South Florida",
-        department: "Make paperworks easier",
+        department: "ERA Lab | University of South Florida",
         logo: ERA,
       },
     ],

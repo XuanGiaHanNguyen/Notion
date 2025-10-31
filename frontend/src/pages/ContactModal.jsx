@@ -14,7 +14,7 @@ function ContactModal({ isOpen, onClose }) {
       onClick={handleOverlayClick}
       className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-50"
     >
-      <div className="bg-white shadow-[0_8px_40px_rgba(0,0,0,0.08)] rounded-2xl w-[720px] py-4 px-4  relative border border-neutral-200">
+      <div className="bg-white shadow-[0_8px_40px_rgba(0,0,0,0.08)] rounded-2xl w-[720px] p-6 relative border border-neutral-200">
         {/* Close button */}
         <button
           onClick={onClose}
@@ -47,45 +47,24 @@ function ContactModal({ isOpen, onClose }) {
                     LinkedIn
                   </div>
                   <a
-                    href="https://www.linkedin.com/in/xuangiahannguyen/"
+                    href="https://www.linkedin.com/in/nxgiahan/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-gray-700 hover:underline"
                   >
-                    linkedin.com/in/xuangiahannnguyen
+                    linkedin.com/in/nxgiahan/
                   </a>
                 </div>
               </div>
 
-              {/* Website */}
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 flex items-center justify-center bg-neutral-300 rounded">
-                  <Globe size={20} className="text-neutral-500" />
-                </div>
-                <div className="flex-1">
-                  <div className="text-sm font-semibold text-neutral-900">
-                    Website
-                  </div>
-                  <a
-                    href="https://github.com/XuanGiaHanNguyen"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-gray-700 hover:underline"
-                  >
-                    github.com/XuanGiaHanNguyen
-                  </a>
-                  <span className="text-sm text-neutral-500 ml-1">
-                    (Personal)
-                  </span>
-                </div>
-              </div>
+
 
               {/* Email */}
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 flex items-center justify-center bg-neutral-300 rounded">
                   <Mail size={20} className="text-neutral-500" />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 flex flex-col">
                   <div className="text-sm font-semibold text-neutral-900">
                     Email
                   </div>
@@ -96,7 +75,12 @@ function ContactModal({ isOpen, onClose }) {
                     XuanGiaHanNguyen@gmail.com
                   </a>
                 </div>
+
+                
               </div>
+              <button className="border-2 w-full py-2 rounded-md text-white bg-neutral-700">
+                  More on me?
+              </button>
             </div>
           </div>
         </div>
